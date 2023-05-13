@@ -1,7 +1,7 @@
 public class HashNode<K, V> {
-    public K key;
-    public V value;
-    public HashNode<K, V> next;
+    private K key;
+    private V value;
+    private HashNode<K, V> next;
 
     public HashNode(K key, V value) {
         this.key = key;
