@@ -108,16 +108,5 @@ public class MyHashTable<K, V> {
         }
         return null;
     }
-    public K copy(K key, V value){
-        for (HashNode<K,V> node : chainArray){
-            while (node !=null){
-                if (node.value.equals(value)) {
-                    return node.key;
-                }
-                node = node.next;
-                }
-            }
-        return key;
     }
-    }
-}
+

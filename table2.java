@@ -2,7 +2,7 @@ public class table2<K,V> {
     public static class HashNode<K, V> {
         private K key;
         private V value;
-        private HashNode<K, V> next;
+        public HashNode<K, V> next;
 
         public HashNode(K key, V value) {
             this.key = key;
@@ -26,6 +26,16 @@ public class table2<K,V> {
     public table2(int M) {
         this.M = M;
         chainArray = new HashNode[M];
+    }
+    public K copy(K key, V value){
+        for (HashNode<K,V> node : chainArray){
+            while (node !=null){
+                if (node.value.equals(value)) {
+                    return node.key;
+                }
+            }
+        }
+        return key;
     }
 
 }
