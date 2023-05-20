@@ -60,7 +60,6 @@ public class MyHashTable<K, V> {
             if (node.key.equals(key)) {
                 return node.value;
             }
-            node = node.next;
         }
         return null;
     }
@@ -91,7 +90,6 @@ public class MyHashTable<K, V> {
                 if (node.value.equals(value)) {
                     return true;
                 }
-                node = node.next;
             }
         }
         return false;
@@ -103,7 +101,6 @@ public class MyHashTable<K, V> {
                 if (node.value.equals(value)) {
                     return node.key;
                 }
-                node = node.next;
             }
         }
         return null;

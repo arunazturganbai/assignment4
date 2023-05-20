@@ -1,3 +1,4 @@
+import java.util.HashMap
 public class table2<K,V> {
     public static class HashNode<K, V> {
         private K key;
@@ -27,15 +28,20 @@ public class table2<K,V> {
         this.M = M;
         chainArray = new HashNode[M];
     }
-    public K copy(K key, V value){
-        for (HashNode<K,V> node : chainArray){
-            while (node !=null){
-                if (node.value.equals(value)) {
-                    return node.key;
-                }
-            }
-        }
-        return key;
+
+    public static void main(String[] args) {
+        // Create the source hash table
+        HashMap<Integer, String> source = new HashMap<>();
+        source.put(1, "One");
+        source.put(2, "Two");
+        source.put(3, "Three");
+
+        // Create a new destination hash table and copy the data
+        HashMap<Integer, String> destination = new HashMap<>(source);
+
+        // Print the copied hash table
+        System.out.println("Copied Hash Table: " + destination);
     }
+}
 
 }
