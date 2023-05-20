@@ -12,6 +12,7 @@ public class HashNode<K, V> {
     public String toString() {
         return "{" + key + " " + value + "}";
     }
+    Object NewNode;
 }
 
 

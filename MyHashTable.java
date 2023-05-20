@@ -1,5 +1,6 @@
 public class MyHashTable<K, V> {
-    private static class HashNode<K, V> {
+    // nested static class
+    public static class HashNode<K, V> {
         private K key;
         private V value;
         private HashNode<K, V> next;
@@ -106,5 +107,17 @@ public class MyHashTable<K, V> {
             }
         }
         return null;
+    }
+    public K copy(K key, V value){
+        for (HashNode<K,V> node : chainArray){
+            while (node !=null){
+                if (node.value.equals(value)) {
+                    return node.key;
+                }
+                node = node.next;
+                }
+            }
+        return key;
+    }
     }
 }
